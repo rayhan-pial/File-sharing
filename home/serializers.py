@@ -8,7 +8,7 @@ class FileListSerializer(serializers.Serializer):
     )
 
     def zip_files(self, folder):
-        shutil.make_archive(folder , 'zip' , folder)
+        shutil.make_archive(f'public/static/zip/{folder}' , 'zip' ,'public/static/{folder}')
 
     def create(self, validated_data):
         folder = Folder.objects.create()
